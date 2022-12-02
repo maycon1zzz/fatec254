@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p1>Valor A: </p1>
+    <input id="vA" type="text"><br>
+    <p1>Valor B: </p1>
+    <input id="vB" type="text"><br>
+    <p1>Valor C: </p1>
+    <input id="vC" type="text"><br>
+    <p1>Valor D: </p1>
+    <input id="vD" type="text"><br>
+    <button id="enter">Enter</button>
+    <br><br>
+    <p1 id="resultado"></p1>
+
+    <script>
+        /*
+        Construa um código PHP que receba os valores A, B, C e D. Efetue a soma entre A e 
+        C, a multiplicação entre B e D e verifique se o resultado da soma é maior, menor ou 
+        igual ao da multiplicação. Imprima: "A+C é maior que B+D", "A+C é menor que 
+        B+D","A+C é igual a B+D
+        */
+
+        document.getElementById("enter").onclick = () => {
+            let a = parseInt(document.getElementById("vA").value);
+            let b = parseInt(document.getElementById("vB").value);
+            let c = parseInt(document.getElementById("vC").value);
+            let d = parseInt(document.getElementById("vD").value);
+
+            if(a+c > b*d){
+                document.getElementById("resultado").innerText = "A + C é maior que B x D";
+            }
+            else{
+                document.getElementById("resultado").innerText = "B x D é maior que A + C";
+            }
+        }
+    </script>
+</body>
+</html>

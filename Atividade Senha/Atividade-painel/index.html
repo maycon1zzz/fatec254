@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div class="painel">
+        <div class="visor">
+            <div id="codigo" class="codigo"></div>
+        </div>
+        <div class="teclado">
+            <div class="teclas">
+                <div class="teclaNumero" style="grid-area: button1;" id="n1" onclick="button('1')">1</div>
+                <div class="teclaNumero" style="grid-area: button2;" id="n2" onclick="button('2')">2</div>
+                <div class="teclaNumero" style="grid-area: button3;" id="n3" onclick="button('3')">3</div>
+                <div class="teclaNumero" style="grid-area: button4;" id="n4" onclick="button('4')">4</div>
+                <div class="teclaNumero" style="grid-area: button5;" id="n5" onclick="button('5')">5</div>
+                <div class="teclaNumero" style="grid-area: button6;" id="n6" onclick="button('6')">6</div>
+                <div class="teclaNumero" style="grid-area: button7;" id="n7" onclick="button('7')">7</div>
+                <div class="teclaNumero" style="grid-area: button8;" id="n8" onclick="button('8')">8</div>
+                <div class="teclaNumero" style="grid-area: button9;" id="n9" onclick="button('9')">9</div>
+                <div class="teclaNumero" style="grid-area: button0;" id="n0" onclick="button('0')">0</div>
+                <div style="grid-area: apagarUm; border: 1px solid black; margin: 1px; display: flex; justify-content: center; align-items: center; background-color: yellow; height: 25px;" id="apagarUm" onclick="button('apagarUm')"><</div>
+                <div style="grid-area: apagar; border: 1px solid black; margin: 1px; display: flex; justify-content: center; align-items: center; background-color: red; height: 25px;" id="deletar" onclick="button('deletar')">DELETAR</div>
+                <div style="grid-area: enter; border: 1px solid black; margin: 1px; display: flex; justify-content: center;  align-items: center; background-color: green; height: 25px;" id="enter"  onclick="button('enter')">ENTER</div>
+            </div>
+        </div>
+    </div>
+    <script src="script/script.js"></script>
+</body>
+</html>

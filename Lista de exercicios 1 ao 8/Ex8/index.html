@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p1>Digite um numero: </p1>
+    <input id="numero" type="text">
+    <button id="enter">Enter</button>
+    <br><br>
+    <p1 id="resultado"></p1>
+
+    <script>
+        document.getElementById("enter").onclick = () => {
+            let numero = parseInt(document.getElementById("numero").value);
+            let nFatorado = numero;
+            for(let i = 1; i < numero; i++){
+                nFatorado *= i;
+            }
+            document.getElementById("resultado").innerText = "A fatoração é: " + nFatorado;
+        }
+    </script>
+</body>
+</html>

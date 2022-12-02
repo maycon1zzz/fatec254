@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p1>Quantos alunos há na turma? </p1>
+    <input type="text" id="quantidade">
+    <button id="enter">Enter</button>
+    <br><br>
+    <div id="alunos" style="display: none">
+        <p1 id="numAluno">1 - Digite a nota do aluno: </p1>
+        <input type="text" id="nota">
+        <button id="enterNota">Enter</button>
+        <br><br>
+        <p1 id="resultado"></p1>
+    </div>
+
+    <script>
+        let notas = [];
+        document.getElementById("enter").onclick = () => {
+            let qntAlunos = parseInt(document.getElementById("quantidade").value);
+            alert(qntAlunos)
+            alert(notas.length)
+            document.getElementById("alunos").style = "";
+                
+            document.getElementById("enterNota").onclick = () => {
+                if(notas.length < qntAlunos){
+                    alert(notas.length)
+                    notas.push(parseInt(document.getElementById("nota").value));
+                    document.getElementById("numAluno").innerText = (notas.length) + "- Digite a nota do aluno: ";
+                }
+                else{
+                    let soma = 0;
+                    for(let i = 0; i < notas.length; i++){
+                        alert(i)
+                        soma += notas[i];
+                    }
+                    document.getElementById("resultado").innerText = "A média das notas é de: " + soma/notas.length;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

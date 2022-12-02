@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p1>Massa do material: </p1>
+    <input type="text" id="massa">
+    <button id="enter">Enter</button>
+    <br>
+    <p1 id="resultado"></p1>
+
+    <script>
+        /*
+        Na usina de Angra dos Reis, os técnicos analisam a perda de massa de um material 
+        radioativo. Sabendo-se que este perde 25% de sua massa a cada 30 segundos, criar um 
+        código que receba a massa do material e imprima o tempo necessário para que a 
+        massa desse material seja menor que 0.10
+        */
+
+        document.getElementById("enter").onclick = () => {
+            let massa = parseFloat(document.getElementById("massa").value);
+            let contagem = 0;
+            while(massa >= 0.1){
+                contagem++;
+                massa = massa - (massa*0.25);
+            }
+            const tempo = contagem * 30;
+            document.getElementById("resultado").innerText = "Tempo necessário: " + tempo + " segundos";
+        }
+    </script>
+</body>
+</html>

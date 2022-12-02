@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p1>Digite a quantidade de maças: </p1>
+    <input type="text" id="quantidade">
+    <button id="enter">Enter</button><br>
+    <p1 id="resultado">O preço é: </p1>
+
+    <script>
+        document.getElementById("enter").onclick = () => {
+            let quantidade = parseInt(document.getElementById("quantidade").value);
+            let preco = 0
+            if(quantidade < 12){
+                preco = quantidade * 1.3;
+            }
+            else{
+                preco = quantidade;
+            }
+            document.getElementById("resultado").innerText = "O preço é: R$" + preco;
+        }
+    </script>
+</body>
+</html>

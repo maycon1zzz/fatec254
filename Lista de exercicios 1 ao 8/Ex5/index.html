@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p1 id="mes"></p1><input type="text" id="temperatura"><br>
+    <button id="enter">Enter</button>
+    <br><br>
+    <p1 id="mediaAnual"></p1>
+    <br>
+    <p1 id="maioresQueMedia"></p1>
+
+    <script>
+        const mes = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+        const temperaturas = [];
+        let index = 0;
+        document.getElementById("mes").innerText = mes[0];
+
+        document.getElementById("enter").onclick = () => {
+            if(index < 12){
+                temperaturas.push(parseFloat(document.getElementById("temperatura").value))
+                document.getElementById("mes").innerText = mes[index];
+                index += 1;
+            }
+            else{
+                let mediaAnual = 0;
+                let mesesAcimaDaMedia = [];
+
+                for(let i = 0; i < 12; i++){
+                    mediaAnual += temperaturas[i];
+                }
+                for(let i = 0; i < 12; i++){
+                    if(temperaturas[i] > mediaAnual){
+                        mesesAcimaDaMedia.push(mes[i]);
+                    }
+                }
+                mediaAnual /= 12;
+                document.getElementById("mediaAnual").innerText = "A media anual foi de: " + mediaAnual + "ºC";
+                document.getElementById("maioresQueMedia").innerText = "Os meses com temperatua acima da média foram: " + mesesAcimaDaMedia;
+            }
+        }
+    </script>
+</body>
+</html>
